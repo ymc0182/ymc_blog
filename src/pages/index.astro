@@ -1,0 +1,62 @@
+---
+import HeaderComponent from "@components/HeaderComponent.astro"
+---
+
+<!-- 
+
+body-bg  -999
+
+loading   999
+
+search    998
+
+modmenu   997
+
+
+-->
+
+
+
+
+<html lang="zh" class="">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		
+	</head>
+	<body class="min-h-screen text-[#555] bg-[#eef5fc] dark:text-[#bbb] dark:bg-[#0d1117] font-mono">
+		
+		<HeaderComponent />
+
+	</body>
+</html>
+
+<style is:global>
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	body:before {
+		z-index: -999;
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, var(--dot-bg-color) 22px, transparent 1%) 50%, linear-gradient(var(--dot-bg-color) 22px, transparent 1%) 50%, var(--dot-color);
+		background-position: center center;
+		background-size: 24px 24px;
+		mask-image: linear-gradient(0deg, transparent 5%, var(--dot-mask-color));
+	}
+	html.dark {
+		--dot-bg-color: #0d1117;
+		--dot-color: #2f353c;
+		--dot-mask-color: #000000;
+	}
+	html:not(.dark) {
+		--dot-bg-color: #ffffff;
+		--dot-color: #a5aeb850;
+		--dot-mask-color: #ffffff;
+	}
+</style>
