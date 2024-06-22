@@ -7,12 +7,13 @@ const NavLinks = {
 }
 ---
 
-<header class="bg-white/30 backdrop-blur border-b text-neutral-800">
+<!-- ===== 顶部导航栏 ===== -->
+<header class="sticky top-0 w-full bg-white/75 backdrop-blur-lg border-b text-neutral-800">
     <div class="container mx-auto px-6 py-2.5">
-        <div class="flex items-center justify-between gap-5">
+        <div class="flex items-center justify-between gap-2.5">
             <a href="/" class="font-bold flex-nowrap shrink-0">🥬 SiteName</a>
             <div class="flex items-center">
-                <nav class="mx-5 inline-flex space-x-2 overflow-hidden flex-nowrap max-w-full overflow-x-scroll text-xs *:shrink-0 *:px-1.5 *:py-1 *:rounded hover:*:bg-slate-100 active:*:bg-slate-200 *:transition *:ease-in-out active:*:scale-95">
+                <nav class="mx-5 inline-flex space-x-1 overflow-hidden flex-nowrap max-w-full overflow-x-scroll text-xs *:shrink-0 *:px-1.5 *:py-1 *:rounded-lg hover:*:bg-slate-100 active:*:bg-slate-200 *:transition *:ease-in-out active:*:scale-95">
                     {Object.entries(NavLinks).map(([name, url]) => (
                         <a href={url}>{name}</a>
                     ))}
@@ -32,7 +33,8 @@ const NavLinks = {
     </div>
 </header>
 
-<div id="search_box" class="fixed w-full h-screen z-[997] bg-white/30 backdrop-blur hidden">
+<!-- ===== 搜索框 ===== -->
+<div id="search_box" class="fixed w-full h-screen bg-white/75 backdrop-blur-lg hidden">
     <div class="container mx-auto px-6">
         <form class="flex items-center max-w-lg mx-auto mt-5">   
             <label for="voice-search" class="sr-only">Search</label>
@@ -52,6 +54,7 @@ const NavLinks = {
         </form>
     </div>
 </div>
+
 
 <script>
     document.getElementById("search_btn_open").addEventListener("click", function(){
