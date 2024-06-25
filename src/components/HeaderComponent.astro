@@ -1,20 +1,15 @@
 ---
-const NavLinks = {
-    '🏠 首页' : '/',
-    '🥰 友链' : '/link/',
-    '✍️ 留言' : '/ly/',
-    '😎 关于' : '/about/',
-}
+import config from "../config.mjs"
 ---
 
 <!-- ===== 顶部导航栏 ===== -->
-<header class="sticky top-0 w-full bg-white/75 backdrop-blur-lg border-b text-neutral-800">
+<header class="sticky top-0 w-full bg-white/75 backdrop-blur-xl border-b text-neutral-800 z-[998]">
     <div class="container mx-auto px-6 py-2.5">
         <div class="flex items-center justify-between">
-            <a href="/" class="font-bold flex-nowrap shrink-0">🥬 SiteName</a>
+            <a href="/" class="font-bold flex-nowrap shrink-0">{config.title}</a>
             <div class="flex items-center">
                 <nav class="mx-5 inline-flex space-x-1.5 overflow-hidden flex-nowrap max-w-full overflow-x-scroll text-xs *:shrink-0 *:px-2 *:py-1.5 *:rounded-md hover:*:bg-slate-100 active:*:bg-slate-200 *:transition *:ease-in-out active:*:scale-95">
-                    {Object.entries(NavLinks).map(([name, url]) => (
+                    {Object.entries(config.navLinks).map(([name, url]) => (
                         <a href={url}>{name}</a>
                     ))}
                 </nav>
@@ -34,7 +29,7 @@ const NavLinks = {
 </header>
 
 <!-- ===== 搜索框 ===== -->
-<div id="search_box" class="fixed w-full h-screen bg-white/75 backdrop-blur-lg hidden z-[998]">
+<div id="search_box" class="fixed w-full h-screen bg-white/75 backdrop-blur-xl hidden z-[997]">
     <div class="container mx-auto px-6">
         <form class="flex items-center max-w-lg mx-auto mt-5">   
             <label for="voice-search" class="sr-only">Search</label>
