@@ -7,6 +7,9 @@ export default defineConfig({
   output: 'server',
   adapter: cloudflare(),
   integrations: [tailwind()],
+  devToolbar: {
+    enabled: false
+  },
 
   //主题配置（不用的注释掉）
   theme: {

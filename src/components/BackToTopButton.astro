@@ -1,0 +1,33 @@
+<button id="backToTopButton" class="fixed bottom-0 right-0 mb-6 mr-6 shadow-md bg-white/75 backdrop-blur rounded-lg border p-2.5 hover:bg-white hover:text-black">
+	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+	</svg>
+</button>
+
+<script>
+	const backToTopButton = document.getElementById('backToTopButton');
+	let timer = null;
+
+	function toggleBackToTopButton(){
+
+		if(timer !== null) clearTimeout(timer);
+
+		if(this.window.pageYOffset > 100){
+			backToTopButton.style.display = 'block';
+			timer = setTimeout(() => {
+				backToTopButton.style.display = 'none';
+			}, 3000);
+		}else{
+			backToTopButton.style.display = 'none';
+		}
+	}
+
+	backToTopButton.addEventListener('click', function(event) {
+		event.preventDefault();
+		window.scrollTo({
+			top:0,
+			behavior: 'smooth'
+		});
+	});
+	window.addEventListener('scroll', toggleBackToTopButton);
+</script>
