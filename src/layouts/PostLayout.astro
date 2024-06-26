@@ -12,7 +12,7 @@ const { frontmatter } = Astro.props;
     <HeaderComponent/>
 
     <main class="container mx-auto px-6 py-8 space-y-8">
-        <article class="rounded-lg border backdrop-blur-[2px] py-6 space-y-6">
+        <article class="rounded-lg border backdrop-blur-[2px] py-6 space-y-8">
             <div class="px-6">
                 <h1 class="text-2xl text-black font-medium">{frontmatter.title}</h1>
                 <div class="flex items-center text-xs font-light gap-2.5 mt-2">
@@ -30,7 +30,7 @@ const { frontmatter } = Astro.props;
                     </time>
                 </div>
             </div>
-            <div>
+            <div class="post-content px-6 text-base font-medium space-y-4 tracking-wider leading-relaxed text-justify text-wrap break-all">
                 <slot />
             </div>
         </article>
