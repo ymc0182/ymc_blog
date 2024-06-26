@@ -1,0 +1,23 @@
+---
+import BackToTopButton from "../components/BackToTopButton.astro";
+import FooterComponent from "../components/FooterComponent.astro";
+import HeaderComponent from "../components/HeaderComponent.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title = {frontmatter.title}>
+    <HeaderComponent/>
+
+    <main class="container mx-auto px-6 py-8 space-y-8">
+        <div class="rounded-lg border backdrop-blur-[2px] p-6">
+            <slot />
+        </div>
+        
+    </main>
+
+    <FooterComponent />
+
+    <BackToTopButton />
+</BaseLayout>
