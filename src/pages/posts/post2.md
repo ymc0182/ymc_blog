@@ -2,7 +2,7 @@
 layout: '../../layouts/PostLayout.astro'
 title: '我的第二篇博客文章'
 pubDate: 2022-07-01
-description: '这是我 Astro 博客的第一篇文章。'
+desc: '这是我 Astro 博客的第一篇文章。 1. **安装 Astro**：首先，我创建了一个新的 Astro 项目并设置好了我的在线账号。'
 author: 'Astro 学习者'
 cover: 'https://docs.astro.build/assets/rose.webp'
 tags: ["astro", "blogging", "learning in public"]

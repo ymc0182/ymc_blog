@@ -1,4 +1,5 @@
 ---
+import BackToTopButton from "../components/BackToTopButton.astro";
 import config from "../config.mjs"
 
 const { title } = Astro.props;
@@ -29,6 +30,8 @@ top btn   996
 	</head>
 	<body ontouchstart="ontouchstart" class="min-h-screen text-[#555] bg-[#eef5fc] dark:text-[#bbb] dark:bg-[#0d1117] font-sans">
         <slot />
+
+		<BackToTopButton />
 	</body>
 </html>
 
