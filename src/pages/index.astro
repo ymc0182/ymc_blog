@@ -22,7 +22,7 @@ const allPosts = await Astro.glob('./posts/*.md');
                     </div>
                     {post.frontmatter.tags && 
                         <ul class="flex flex-wrap items-center gap-2.5 text-xs font-light text-neutral-400">
-                            {post.frontmatter.tags.map((tag) => <li><a class="border rounded px-1 py-0.5 shadow-sm">#{tag}</a></li>)}
+                            {post.frontmatter.tags.map((tag) => <li><a class="border rounded px-1 py-0.5">#{tag}</a></li>)}
                         </ul>
                     }
                 </article>
