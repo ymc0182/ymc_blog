@@ -17,12 +17,12 @@ const allPosts = await Astro.glob('./posts/*.md');
             {allPosts.map((post) => 
                 <article class="w-full h-full rounded-lg border flex flex-col gap-6 p-6 backdrop-blur-[2px] text-justify">
                     <div class="h-full space-y-2">
-                        <h1 class="text-lg md:text-xl lg:text-2xl text-black line-clamp-2 drop-shadow-sm"><a href={post.url}>{post.frontmatter.title}</a></h1>
+                        <h1 class="text-lg md:text-xl lg:text-2xl text-black line-clamp-2"><a href={post.url}>{post.frontmatter.title}</a></h1>
                         {post.frontmatter.desc && <div class="text-sm font-light line-clamp-3">{post.frontmatter.desc}</div>}
                     </div>
                     {post.frontmatter.tags && 
-                        <ul class="flex flex-wrap items-center gap-1.5 text-xs font-light leading-6">
-                            {post.frontmatter.tags.map((tag) => <li><a class="border text-neutral-400 rounded px-1.5 py-0.5">#{tag}</a></li>)}
+                        <ul class="flex flex-wrap items-center gap-2.5 text-xs font-light text-neutral-400">
+                            {post.frontmatter.tags.map((tag) => <li><a class="border rounded px-1 py-0.5 shadow-sm">#{tag}</a></li>)}
                         </ul>
                     }
                 </article>
